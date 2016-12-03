@@ -55,6 +55,11 @@ namespace MetroFramework
         public Theme this[string key] { get { return _themes[key]; } }
         public Theme DefaultTheme { get; private set; }
 
+        public void AddStyle(string name, Color color)
+        {
+            _styles.Add(name, new Style(name, color));
+        }
+
         public static MetroStyles Create()
         {
             const string resID = RESOURCE_NAMESPACE + "." + THEMES_XML;
